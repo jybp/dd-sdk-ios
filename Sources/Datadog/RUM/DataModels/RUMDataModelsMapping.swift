@@ -37,9 +37,22 @@ internal extension RUMUserActionType {
     var toRUMDataFormat: RUMActionEvent.Action.ActionType {
         switch self {
         case .tap: return .tap
+        case .click: return .click
         case .scroll: return .scroll
         case .swipe: return .swipe
         case .custom: return .custom
+        }
+    }
+}
+
+internal extension RUMViewEvent.Source {
+    var toErrorEventSource: RUMErrorEvent.Source {
+        switch self {
+        case .ios: return .ios
+        case .android: return .android
+        case .browser: return .browser
+        case .reactNative: return .reactNative
+        case .flutter: return .flutter
         }
     }
 }
